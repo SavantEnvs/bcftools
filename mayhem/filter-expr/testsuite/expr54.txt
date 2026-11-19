@@ -1,0 +1,1 @@
+COUNT(GT="het")=1

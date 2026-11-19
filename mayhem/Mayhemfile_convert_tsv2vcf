@@ -1,0 +1,11 @@
+project: savantenvs/bcftools
+target: convert-tsv2vcf
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/convert-tsv2vcf/testsuite
+
+cmds:
+  # mayhem-lint: ok-image-path  (read-only reference inputs; the program writes only to stdout)
+  - cmd: /mayhem/bcftools-asan convert --tsv2vcf @@ -c ID,CHROM,POS,AA -s SAMPLE1 -f /mayhem/mayhem/convert-tsv2vcf/ref.fa
+    timeout: 10

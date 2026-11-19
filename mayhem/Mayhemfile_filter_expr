@@ -1,0 +1,10 @@
+project: savantenvs/bcftools
+target: filter-expr
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/filter-expr/testsuite
+
+cmds:
+  - cmd: /mayhem/filter_expr @@
+    timeout: 10

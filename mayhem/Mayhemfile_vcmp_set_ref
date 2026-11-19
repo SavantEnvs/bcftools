@@ -1,0 +1,11 @@
+project: savantenvs/bcftools
+target: vcmp-set-ref
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/vcmp-set-ref/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_vcmp_set_ref
+    libfuzzer: true
+    timeout: 10

@@ -1,0 +1,1 @@
+GT="het" & binom(FMT/AD[:0],FMT/AD[:1])>0.01

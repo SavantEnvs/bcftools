@@ -1,0 +1,1 @@
+sMEDIAN(FORMAT/AO)==4

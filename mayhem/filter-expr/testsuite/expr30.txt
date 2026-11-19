@@ -1,0 +1,1 @@
+SUM(FMT/DP,GT!="mis")+SUM(FMT/DP,GT="mis")>100

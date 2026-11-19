@@ -1,0 +1,13 @@
+project: savantenvs/bcftools
+target: csq-gff
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/csq-gff/testsuite
+
+cmds:
+  # mayhem-lint: ok-image-path  (read-only reference inputs; the program writes only to stdout)
+  # No filepath: csq reads the GFF by content, and staging @@ under /tmp sends mayhem-fuzz into a
+  # restart loop. --allow mig (upstream option) keeps going when a seed's GFF seqid is not the VCF's.
+  - cmd: /mayhem/bcftools-asan csq --allow mig -g @@ -f /mayhem/mayhem/csq-gff/ref.fa /mayhem/mayhem/csq-gff/in.vcf
+    timeout: 10

@@ -1,0 +1,10 @@
+project: savantenvs/bcftools
+target: bcftools
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bcftools/testsuite
+
+cmds:
+  - cmd: /mayhem/bcftools-asan stats @@
+    timeout: 10
